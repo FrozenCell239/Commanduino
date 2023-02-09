@@ -13,8 +13,8 @@
 
         <!--PHP scripts.-->
         <?php
-            #Dès l'arrivée, si personne n'est pas connectée alors rediriger vers login.php.
             include('server.php');
+	    if(!isset($_SERVER['username'])){header("Location: index.php");};
             if($_SESSION['profession'] == "secretaire"){include_once('commanduino.php');};
         ?>
 
