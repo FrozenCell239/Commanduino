@@ -1,6 +1,6 @@
 <?php
     function strikeOpen(){
-        if(!$fp = fopen("/dev/ttyUSB0", "w")){
+        if(!$fp = fopen("/dev/serial", "w")){
             echo("Impossible de communiquer avec la carte Arduino.");
         }
         else{
