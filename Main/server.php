@@ -2,7 +2,8 @@
 	session_start(); //Start session.
 
 	$errors = array(); //Used to collect errors if some happen.
-	$conn = mysqli_connect('localhost:3307', 'root', '', 'cabinet'); //Connection to the database.
+	//$conn = mysqli_connect('localhost:3307', 'root', '', 'cabinet'); //Connection to the database on a Windows computer.
+	$conn = mysqli_connect('mariadb', 'root', 'root', 'cabinet'); //Connection to the database on a Debian server.
 
 	# Registration
 	if(isset($_POST['register'])){
