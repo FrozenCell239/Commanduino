@@ -14,7 +14,7 @@
         <!--PHP scripts.-->
         <?php
             include('server.php');
-	    if(!isset($_SERVER['username'])){header("Location: index.php");};
+	    if(!isset($_SESSION['username'])){header("Location: index.php");};
             if($_SESSION['profession'] == "secretaire"){include_once('commanduino.php');};
         ?>
 
