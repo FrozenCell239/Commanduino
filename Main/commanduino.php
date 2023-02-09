@@ -1,7 +1,8 @@
 <?php
-    include("ArduinoLinuxSerial.php");
+    $d = dirname(__FILE__);
+    include("$d/ArduinoLinuxSerial.php");
 
-    $ArduinoSerial = new ArduinoLinuxSerial('/dev/ttyACM0');
+    $ArduinoSerial = new ArduinoLinuxSerial('/dev/serial');
 
     function strikeOpen(){
         $order = $ArduinoSerial->sendMessage('1');
