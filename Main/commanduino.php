@@ -1,4 +1,6 @@
 <?php
+    include_once('php_serial.class.php');
+
     function init(){
 
     }
