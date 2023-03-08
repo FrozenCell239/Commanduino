@@ -44,11 +44,13 @@
                         <?php
                             };
 	                    	if(isset($_POST['door_unlock'])){
-                                strikeOpen();
+                                //strikeOpen();
+                                doorControl("A");
                                 unset($_POST['door_unlock']);
 	                    	};
                             if(isset($_POST['door_open'])){
-                                strikeOpen();
+                                //strikeOpen();
+                                doorControl("B");
                                 unset($_POST['door_open']);
 	                    	};
 	                    ?>
