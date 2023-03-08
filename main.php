@@ -49,7 +49,7 @@
                                 unset($_POST['door_unlock']);
 	                    	};
                             if(isset($_POST['door_open'])){
-                                strikeOpen();
+                                doorOpen();
                                 //doorControl("B");
                                 unset($_POST['door_open']);
 	                    	};
