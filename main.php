@@ -16,26 +16,6 @@
             include('server.php');
             if(!isset($_SESSION['profession'])){header("Location: index.php");};
             if($_SESSION['profession'] == "secretaire"){include_once('commanduino.php');};
-
-            private function sendDataToHost(string $hostIP, int $hostPort, string $data){
-                $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-                $resp = "";
-                if(!is_resource($socket)){
-                    try{
-                        socket_connect($socket, $hostIP, $hostPort);
-                        socket_write($socket, $data);
-                        $resp = socket_read($socket, 1024);
-                    }
-                    catch(\Exception $e){
-                        echo "Error while connecting socket";
-                    }
-                    socket_close($socket);
-                }
-                else{
-                    echo "Error creating the socket";
-                }
-                return $resp;
-            }
         ?>
 
         <!--Others.-->
@@ -64,11 +44,11 @@
                         <?php
                             };
 	                    	if(isset($_POST['door_unlock'])){
-                                sendDataToHost("192.168.212.250", "80", 'H');
+                                strikeOpen();
                                 unset($_POST['door_unlock']);
 	                    	};
                             if(isset($_POST['door_open'])){
-                                shell_exec("./pyduino.py -2");
+                                strikeOpen();
                                 unset($_POST['door_open']);
 	                    	};
 	                    ?>
