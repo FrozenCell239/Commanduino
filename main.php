@@ -15,7 +15,7 @@
         <?php
             include('server.php');
             if(!isset($_SESSION['profession'])){header("Location: index.php");};
-            //if($_SESSION['profession'] == "secretaire"){include_once('commanduino.php');};
+            if($_SESSION['profession'] == "secretaire"){include_once('commanduino.php');};
         ?>
 
         <!--Others.-->
@@ -35,24 +35,24 @@
                         <h1>Connecté(e) en tant que <b><?php echo $_SESSION['name']; echo " "; echo $_SESSION['last_name']; ?></b>, poste <?php echo $_SESSION['profession']; ?>.</h1>
                         <hr>
                         <?php if($_SESSION['profession'] == "secretaire"){ //Interface propre à la secrétaire. ?>
-                        <form action="http://192.168.1.177/A" method="post">
+                        <form action="main.php" method="post">
                             <button type="submit" name="door_unlock">Déverrouiller la porte.</button>
                         </form>
-                        <form action="http://192.168.1.177/B" method="post">
+                        <form action="main.php" method="post">
                             <button type="submit" name="door_open">Ouvrir la porte.</button>
                         </form>
                         <?php
                             };
-	                    /*if(isset($_POST['door_unlock'])){
-                                //strikeOpen();
-                                doorControl("A");
+	                    	if(isset($_POST['door_unlock'])){
+                                strikeOpen();
+                                //doorControl("A");
                                 unset($_POST['door_unlock']);
 	                    	};
                             if(isset($_POST['door_open'])){
-                                //strikeOpen();
-                                doorControl("B");
+                                strikeOpen();
+                                //doorControl("B");
                                 unset($_POST['door_open']);
-	                    	};*/
+	                    	};
 	                    ?>
                     </div>
                 </div>
