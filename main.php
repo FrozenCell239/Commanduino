@@ -35,15 +35,15 @@
                         <h1>Connecté(e) en tant que <b><?php echo $_SESSION['name']; echo " "; echo $_SESSION['last_name']; ?></b>, poste <?php echo $_SESSION['profession']; ?>.</h1>
                         <hr>
                         <?php if($_SESSION['profession'] == "secretaire"){ //Interface propre à la secrétaire. ?>
-                        <form action="main.php" method="post">
+                        <form action="http://192.168.1.177/A" method="post">
                             <button type="submit" name="door_unlock">Déverrouiller la porte.</button>
                         </form>
-                        <form action="main.php" method="post">
+                        <form action="http://192.168.1.177/B" method="post">
                             <button type="submit" name="door_open">Ouvrir la porte.</button>
                         </form>
                         <?php
                             };
-	                    	/*if(isset($_POST['door_unlock'])){
+	                    /*if(isset($_POST['door_unlock'])){
                                 //strikeOpen();
                                 doorControl("A");
                                 unset($_POST['door_unlock']);
