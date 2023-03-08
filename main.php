@@ -15,7 +15,7 @@
         <?php
             include('server.php');
             if(!isset($_SESSION['profession'])){header("Location: index.php");};
-            if($_SESSION['profession'] == "secretaire"){include_once('commanduino.php');};
+            //if($_SESSION['profession'] == "secretaire"){include_once('commanduino.php');};
         ?>
 
         <!--Others.-->
@@ -43,7 +43,7 @@
                         </form>
                         <?php
                             };
-	                    	if(isset($_POST['door_unlock'])){
+	                    	/*if(isset($_POST['door_unlock'])){
                                 //strikeOpen();
                                 doorControl("A");
                                 unset($_POST['door_unlock']);
@@ -52,7 +52,7 @@
                                 //strikeOpen();
                                 doorControl("B");
                                 unset($_POST['door_open']);
-	                    	};
+	                    	};*/
 	                    ?>
                     </div>
                 </div>
