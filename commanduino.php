@@ -1,30 +1,22 @@
 <?php
-    function strikeOpen(){ //Opens only the strike.
-        $fp = fopen("/dev/ttyACM0", "wb+");
+    function strikeOpen(){ //Sends the order to command only the strike.
+        $fp = fopen("/dev/ttyACM0", "wb+"); //"/dev/ttyACM0" is the path of your Arduino board on Debian-based Linux distros.
         if(!$fp){
-            echo "Erreur : impossible de communiquer avec la carte Arduino !";
+            echo "Error: impossible to dial with Arduino board !";
         }
         else{
             fwrite($fp, '1');
-            fclose($fp);
+            fclose($fp); //That's better to close the connection once the order is sent.
         };
     };
-    function doorOpen(){ //Opens both the strike and the door.
+    function doorOpen(){ //Sends the order to command both the strike and the door.
         $fp = fopen("/dev/ttyACM0", "wb+");
         if(!$fp){
-            echo "Erreur : impossible de communiquer avec la carte Arduino !";
+            echo "Error: impossible to dial with Arduino board !";
         }
         else{
             fwrite($fp, '2');
             fclose($fp);
         };
     };
-    /*function doorControl($ORDER){
-        $url = "http://192.168.1.177/?status=".$ORDER; // IP address of the Arduino board
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_exec($ch);
-        curl_close($ch);
-    };*/
 ?>
