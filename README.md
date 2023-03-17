@@ -15,7 +15,7 @@ If you encounter any problem, ensure you allowed your code to dial with your Ard
 
 ### Arduino code :
 - Arduino IDE 2.
-- Relay 1.0.0 library (download it via Arduino IDE ; here is the [source code](https://github.com/rafaelnsantos/Relay) if you're curious about it.).
+- [Relay 1.0.0](https://github.com/rafaelnsantos/Relay) library (download it via Arduino IDE).
 
 ### Server/computer :
 - Should work with any of most recent Linux distributions. _Gotta find a way to make it work on Windows later._
