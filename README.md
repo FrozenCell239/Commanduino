@@ -18,16 +18,14 @@ If you encounter any problem, ensure you allowed your code to dial with your Ard
 - [Relay 1.0.0](https://github.com/rafaelnsantos/Relay) library (download it via Arduino IDE).
 
 ### Server/computer :
-- Should work with any of most recent Linux distributions. _Gotta find a way to make it work on Windows later._
+- Works with Debian 11, and thus with Debian-based most recent distributions. Should work with any of most recent GNU/Linux distributions.
 - PHP 7.4 or later.
 - Apache 2
-_(Nginx could later be used instead of Apache 2. It also currently doesn't work with Docker containment, but this should be fixed later)_.
-
 
 ## Environnement for test.
 ### Arduino board :
 - Arduino Mega 2560.
--2 Songle relays for Arduino.
+- 2 Songle relays for Arduino.
 
 ### Arduino code :
 - Arduino IDE 2 (started with 2.0.3 and updated to 2.0.4 during the project progress).
@@ -37,3 +35,10 @@ _(Nginx could later be used instead of Apache 2. It also currently doesn't work 
 - Debian 11.
 - PHP 7.4.
 - Apache 2
+
+## Planned changes.
+- Windows compatibility (because the `fopen()` method is built different on Linux and on Windows).
+- Possibility to use Nginx instead of Apache 2 on a GNU/Linux server.
+- Docker or Podman compatibility on a GNU/Linux server.
+- Possibility to command the Arduino board over an Ethernet link instead of the serial link.
+- A Troubleshooting section in this read-me file. (Could be useful especially for Ethernet link.)
