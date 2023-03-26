@@ -2,9 +2,12 @@
 An example of a simple way to command an Arduino relay via a PHP web page.
 
 I did this for my student project.
-I'm looking for a way to make this work but with an Ethernet connection instead of the USB cable. Then it could be used in an actual firm network as I have to do in my student project.
+_Please, note that the way to command the Arduino board over serial cable that I found doesn't work with Windows._
 
-If you encounter any problem, ensure you allowed your code to dial with your Arduino board. I'll indicate later the necessary CLI command(s) in a Troubleshooting section. Feel free to send me any question or suggestions.
+If you encounter any problem, ensure you allowed your code to dial with your Arduino board. For the Ethernet way, also ensure that you provided relevant IP parameters to your Arduino Ethernet shield and your PC/server. You may need to disable your firewall on Windows and some Linux distros, or create a new firewale rule. Feel free to send me any questions or suggestions.
+
+## Getting started.
+Make sure that the PHP files are in the same folder, and also place the four files of the Relay library into the Arduino sketch folder.
 
 ## Requirements.
 ### Arduino board :
@@ -15,7 +18,7 @@ If you encounter any problem, ensure you allowed your code to dial with your Ard
 
 ### Arduino code :
 - Arduino IDE 2.
-- [Relay 1.0.0](https://github.com/rafaelnsantos/Relay) library (download it via Arduino IDE).
+- Relay library found on [circuit.io](https://www.circuito.io/app?components=512,11061,3061987,3061987).
 
 ### Server/computer :
 - Works with Debian 11, and thus with Debian-based most recent distributions. Should work with any of most recent GNU/Linux distributions.
@@ -29,7 +32,7 @@ If you encounter any problem, ensure you allowed your code to dial with your Ard
 
 ### Arduino code :
 - Arduino IDE 2 (started with 2.0.3 and updated to 2.0.4 during the project progress).
-- Relay 1.0.0 library.
+- Relay library found on [circuit.io](https://www.circuito.io/app?components=512,11061,3061987,3061987).
 
 ### Server side :
 - Debian 11.
@@ -37,8 +40,7 @@ If you encounter any problem, ensure you allowed your code to dial with your Ard
 - Apache 2
 
 ## Planned changes.
-- Windows compatibility (because the `fopen()` method is built different on Linux and on Windows).
+- Windows compatibility for serial way (because the `fopen()` method is built different on Linux and on Windows).
 - Possibility to use Nginx instead of Apache 2 on a GNU/Linux server.
 - Docker or Podman compatibility on a GNU/Linux server.
 - Possibility to command the Arduino board over an Ethernet link instead of the serial link.
-- A Troubleshooting section in this read-me file. (Could be useful especially for Ethernet link.)
