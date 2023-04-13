@@ -1,5 +1,5 @@
 # Commanduino
-An example of a simple way to command an Arduino relay via a PHP web page.
+An example of a simple way to command one (or several) Arduino relay(s) via a HTML & PHP web page.
 
 I did this for my student project.
 _Please, note that the way to command the Arduino board over serial cable that I found doesn't work with Windows._
