@@ -49,7 +49,7 @@
                         </form>
                         <?php
 	                    	if(isset($_POST['door_unlock'])){
-                                doorControl('$');
+                                doorControl('%');
 	                    	};
                             if(isset($_POST['door_open'])){
                                 doorControl('#');
