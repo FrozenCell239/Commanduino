@@ -46,7 +46,7 @@ void loop(){
         udp.read(packetBuffer, UDP_TX_PACKET_MAX_SIZE); //Reads the packet into packetBuffer.
         Serial.print("Contents : ");
         Serial.println(packetBuffer); //Prints the full content of the packetBuffer.
-        if(packetBuffer[0] == '$'){
+        if(packetBuffer[0] == '%'){
             unlockDoor();
         };
         if(packetBuffer[0] == '#'){
